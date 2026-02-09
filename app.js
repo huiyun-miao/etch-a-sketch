@@ -1,8 +1,15 @@
 let drawing = false;
-let gridNumber = Number(
-  prompt("Please choose a number between 10 and 100 for the grid.", "16"),
+
+let input = prompt(
+  "Please choose a number between 10 and 100 for the grid.",
+  "16",
 );
-const canvasWidth = 600;
+let gridNumber = Number(input);
+if (!Number.isInteger(gridNumber) || gridNumber < 10 || gridNumber > 100) {
+  gridNumber = 16;
+}
+
+const canvasWidth = 500;
 const container = document.querySelector(".container");
 
 for (let i = 0; i < gridNumber * gridNumber; i++) {
