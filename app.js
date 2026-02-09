@@ -13,12 +13,22 @@ for (let i = 0; i < gridNumber * gridNumber; i++) {
 
   grid.addEventListener("mousedown", () => {
     drawing = true;
+    grid.style.background = "black";
   });
   grid.addEventListener("mousemove", () => {
     if (!drawing) return;
     grid.style.background = "black";
   });
-  grid.addEventListener("mouseup", () => {
+  document.addEventListener("mouseup", () => {
     drawing = false;
   });
+
+  // mouseup event needs to be added in document, if it is added for grid, the following issue will happen
+  //1. move outside the grid
+  //2. release mouse button, mouseup does NOT fire on grid
+  //3. drawing stays true
+
+  // grid.addEventListener("mouseup", () => {
+  //   drawing = false;
+  // });
 }
