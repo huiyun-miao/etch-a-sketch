@@ -11,8 +11,6 @@ function createGrids(gridNumber) {
     grid.id = `grid${i}`;
     grid.className = "grid";
     grid.style.width = grid.style.height = `${canvasWidth / gridNumber}px`;
-    grid.style.border = "0.1px solid black";
-    grid.style.boxSizing = "border-box";
     container.appendChild(grid);
   }
 }
